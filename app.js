@@ -7,10 +7,6 @@ app.get('/', function (_, res) {
 
 app.use('/assets', express.static('assets'));
 
-app.get('/assets/{{a}}', (_, res) => {
-    res.send(path.join(__dirname, 'assets', '{{a}}'));
-});
-
 app.use('/index.css', function (_, res) {
     res.sendFile('index.css', {root: __dirname});
 });
